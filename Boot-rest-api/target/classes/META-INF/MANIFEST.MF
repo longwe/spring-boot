@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: boot-rest-api
+Implementation-Version: 0.1
+Built-By: mlongwe
+Implementation-Vendor-Id: com.mlongwe
+Build-Jdk: 1.8.0_60
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.mlongwe.springbootrest.CustomerApplication
+
