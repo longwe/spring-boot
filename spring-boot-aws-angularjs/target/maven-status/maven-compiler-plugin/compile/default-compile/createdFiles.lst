@@ -1,0 +1,10 @@
+com\miya\longwe\springboot\controller\AppController.class
+com\miya\longwe\springboot\configuration\JpaConfiguration.class
+com\miya\longwe\springboot\SpringBootAngularJs.class
+com\miya\longwe\springboot\util\CustomErrorType.class
+com\miya\longwe\springboot\service\EmployeeService.class
+com\miya\longwe\springboot\service\EmployeeServiceImpl.class
+com\miya\longwe\springboot\data\DataBuilder.class
+com\miya\longwe\springboot\model\Employee.class
+com\miya\longwe\springboot\controller\RestApiController.class
+com\miya\longwe\springboot\repositories\EmployeeRepository.class
