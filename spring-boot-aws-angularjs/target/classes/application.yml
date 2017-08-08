@@ -1,12 +1,12 @@
 ---
 server:
-  port: 5000
+  port: 8686
   contextPath: /spring-boot-aws-angularjs
 ---
 spring:
   profiles: local, default
 datasource:
-  sampleapp:
+  myapp:
     url: jdbc:h2:~/test
     username: SA
     password:

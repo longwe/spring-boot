@@ -19,8 +19,12 @@ import com.miya.longwe.springboot.model.Employee;
 import com.miya.longwe.springboot.service.EmployeeService;
 import com.miya.longwe.springboot.util.CustomErrorType;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/api")
+@Api(value="employees", description="Operations pertaining to operations managing employee information")
 public class RestApiController {
 
 	public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
@@ -30,7 +34,8 @@ public class RestApiController {
 
 	// -------------------Retrieve All Employees---------------------------------------------
 
-	@RequestMapping(value = "/employee/", method = RequestMethod.GET)
+	@RequestMapping(value = "/employees/", method = RequestMethod.GET)
+	@ApiOperation(value = "Retrieves all information about employees", response = Employee.class)
 	public ResponseEntity<List<Employee>> listAllEmployees() {
 		List<Employee> employees = employeeService.findAllEmployees();
 		if (employees.isEmpty()) {
@@ -42,7 +47,8 @@ public class RestApiController {
 
 	// -------------------Retrieve Single Employee------------------------------------------
 
-	@RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/employees/{id}", method = RequestMethod.GET)
+	@ApiOperation(value = "Fetches Employee by id", response = Employee.class)
 	public ResponseEntity<?> getEmployee(@PathVariable("id") long id) {
 		logger.info("Fetching Employee with id {}", id);
 		Employee employee = employeeService.findById(id);
@@ -56,7 +62,8 @@ public class RestApiController {
 
 	// -------------------Create a Employee-------------------------------------------
 
-	@RequestMapping(value = "/employee/", method = RequestMethod.POST)
+	@RequestMapping(value = "/employees/", method = RequestMethod.POST)
+	@ApiOperation(value = "Created an Employee Instance", response = Employee.class)
 	public ResponseEntity<?> createEmployee(@RequestBody Employee employee, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating Employee : {}", employee);
 
@@ -74,7 +81,8 @@ public class RestApiController {
 
 	// ------------------- Update a Employee ------------------------------------------------
 
-	@RequestMapping(value = "/employee/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/employees/{id}", method = RequestMethod.PUT)
+	@ApiOperation(value = "Updates Employee Instance", response = Employee.class)
 	public ResponseEntity<?> updateEmployee(@PathVariable("id") long id, @RequestBody Employee employee) {
 		logger.info("Updating Employee with id {}", id);
 
@@ -96,7 +104,8 @@ public class RestApiController {
 
 	// ------------------- Delete a Employee-----------------------------------------
 
-	@RequestMapping(value = "/employee/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/employees/{id}", method = RequestMethod.DELETE)
+	@ApiOperation(value = "Deletes Employee by id", response = Employee.class)
 	public ResponseEntity<?> deleteEmployee(@PathVariable("id") long id) {
 		logger.info("Fetching & Deleting Employee with id {}", id);
 
@@ -112,7 +121,8 @@ public class RestApiController {
 
 	// ------------------- Delete All Employees-----------------------------
 
-	@RequestMapping(value = "/employee/", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/employees/", method = RequestMethod.DELETE)
+	@ApiOperation(value = "Delete All Employees Instances", response = Employee.class)
 	public ResponseEntity<Employee> deleteAllEmployees() {
 		logger.info("Deleting All Employees");
 

@@ -2,7 +2,7 @@ var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
     BASE: '/spring-boot-aws-angularjs',
-    USER_SERVICE_API : '/spring-boot-aws-angularjs/api/employee/'
+    USER_SERVICE_API : '/spring-boot-aws-angularjs/api/employees/'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',

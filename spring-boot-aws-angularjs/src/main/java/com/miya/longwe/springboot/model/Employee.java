@@ -11,15 +11,19 @@ import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import io.swagger.annotations.ApiModel;
+
 /**
  * @author mlongwe
  *
  */
 @Entity(name="app_employee")
+@ApiModel(value="MediagramDTO")
 public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	
 	private Long id;
 
 	@NotEmpty
